@@ -1,11 +1,20 @@
+const toReal = number =>
+  number.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
+const pow12 = number => Math.pow(number, 1 / 12);
+
 export default (monthSalary, savings, portfolio) => {
-  let months = 0;
-  const yearInflation = 1.045;
-  const monthInflation = Math.pow(yearInflation, 1 / 12);
-  const yearInvestimentReturn = 1.075;
-  const monthInvestimentReturn = Math.pow(yearInvestimentReturn, 1 / 12);
-  const safeWithdrawRateMonth = monthInvestimentReturn - monthInflation; // 1/0.03 (ano) = 33.33 times your annual expenses
   const yearMonths = 12;
+  const yearInflation = 1.045;
+  const monthInflation = pow12(yearInflation);
+  const yearInvestimentReturn = 1.075;
+  const monthInvestimentReturn = pow12(yearInvestimentReturn);
+  const safeWithdrawRateMonth = monthInvestimentReturn - monthInflation; // 1/0.03 (ano) = 33.33 times your annual expenses
+
+  let months = 0;
 
   while (portfolio * safeWithdrawRateMonth <= monthSalary) {
     portfolio += savings;
@@ -13,12 +22,6 @@ export default (monthSalary, savings, portfolio) => {
     portfolio = Math.round(portfolio);
     months++;
   }
-
-  const toReal = number =>
-    number.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    });
 
   const resultCash = toReal(portfolio);
   const resultReturns = toReal(monthSalary);
