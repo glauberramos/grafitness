@@ -1,5 +1,4 @@
 export default (monthSalary, savings, portfolio) => {
-  let result;
   let months = 0;
   const yearInflation = 1.045;
   const monthInflation = Math.pow(yearInflation, 1 / 12);
@@ -26,7 +25,5 @@ export default (monthSalary, savings, portfolio) => {
   const yearResult = Math.floor(months / yearMonths);
   const monthResult = months % yearMonths;
 
-  result = `Após ${yearResult} anos e ${monthResult} meses, você terá ${resultCash} no banco, podendo sacar seguramente ${resultReturns} por mês.`;
-
-  return result;
+  return `Após ${yearResult} anos e ${monthResult} meses, você terá ${resultCash} no banco, podendo sacar seguramente ${resultReturns} por mês.`;
 };
