@@ -53,8 +53,6 @@ export default (monthSalary, savings, portfolio) => {
       currency: "BRL"
     });
 
-  console.log(months);
-
   const resultCash = toReal(totalCash);
   const resultReturns = toReal(monthSalary);
   const yearResult = Math.floor(months / yearMonths);
