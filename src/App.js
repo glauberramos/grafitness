@@ -15,7 +15,10 @@ class App extends Component {
 
   onChangePortfolio(event) {
     const parsedValue = parseInt(event.target.value, 10);
-    this.setState({ portfolio: parsedValue });
+
+    if (parsedValue) {
+      this.setState({ portfolio: parsedValue });
+    }
   }
 
   onChangeSaving(event) {
