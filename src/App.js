@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TextField from "@material-ui/core/TextField";
 import "./App.css";
 import calculator from "./calculator";
 
@@ -7,9 +8,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      monthSalary: 2000,
-      monthSaving: 4000,
-      portfolio: 0
+      monthSalary: 5000,
+      monthSaving: 5000,
+      portfolio: 20000
     };
   }
 
@@ -45,22 +46,22 @@ class App extends Component {
     return (
       <div className="App">
         <label>
-          Investimento atual:
-          <input
+          <TextField
+            label="Portfolio"
             onChange={this.onChangePortfolio.bind(this)}
             value={this.state.portfolio}
           />
         </label>
         <label>
-          Dinheiro investido por mês:
-          <input
+          <TextField
+            label="Investimento por mês"
             onChange={this.onChangeSaving.bind(this)}
             value={this.state.monthSaving}
           />
         </label>
         <label>
-          Salário mensal aposentadoria:
-          <input
+          <TextField
+            label="Salário esperado"
             onChange={this.onChangeSalary.bind(this)}
             value={this.state.monthSalary}
           />{" "}
