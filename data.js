@@ -6,6 +6,7 @@ const activities = [
   "Apoio",
   "Deitado levanta uma perna",
   "Deitado levanta outra perna",
+  "Deitado estendido, abraça perna",
   "Abdominal normal",
   "Abdominal na diagonal",
   "Ponte",
