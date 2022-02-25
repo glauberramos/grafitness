@@ -1,0 +1,33 @@
+const activities = [
+  "Poli chinelo",
+  "Corridinha no lugar",
+  "Agachamento normal",
+  "Agachamento soco no teto",
+  "Apoio",
+  "Deitado levanta uma perna",
+  "Deitado levanta outra perna",
+  "Abdominal normal",
+  "Abdominal na diagonal",
+  "Ponte",
+  "Paso pra trás",
+  "Paso pra frente",
+  "Prancha isometria",
+  "Escalador - Joelho cotovelo",
+  "Panturrilha",
+  "Tricepes testa",
+  "Bicepes",
+  "Supino",
+  "Levantamento lateral",
+  "Levantamento frontal",
+];
+
+const alongamento = [
+  "Deitado segura as pernas",
+  "Estica uma perna e segura a outra",
+  "Estica uma perna e segura a outra - troca",
+  "Coloca as pernas pro lado",
+  "Coloca as pernas pro outro lado",
+  "Sentado abre as pernas e tenta alcançar elas",
+  "Fecha uma perna e tenta alcançar a outra esticada",
+  "Fecha uma perna e tenta alcançar a outra esticada - troca",
+];
