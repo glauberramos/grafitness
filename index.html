@@ -22,6 +22,10 @@
       font-size: 80px;
     }
 
+    small {
+      font-size: 25px;
+    }
+
     ul,
     ol {
       padding-left: 0;
@@ -48,7 +52,7 @@
       padding: 40px;
       border-radius: 2px;
       background-color: #fff;
-      width: 48%;
+      width: 90%;
     }
 
     h1 {
@@ -72,10 +76,6 @@
       overflow-wrap: break-word;
       margin: 8px 0 12px;
       display: block;
-    }
-
-    section {
-      margin-bottom: 24px;
     }
 
     section.sections {
@@ -141,6 +141,10 @@
       padding-top: 100px;
     }
 
+    .list-activities {
+      margin: 0 10%;
+    }
+
     .list-activities,
     .flex {
       display: flex;
@@ -194,16 +198,14 @@
           <div class="second-list">
             <h2>Treino</h2>
             <ol>
+              <div v-show="finalList.length === 0">
+                Selecione suas atividades
+              </div>
               <li v-for="(activity, index) in finalList">
                 <div>{{activity}}</div>
               </li>
             </ol>
-            <button
-              class="add-section"
-              @click="showResults = true; start(10 , finalList, false)"
-            >
-              Start
-            </button>
+            <button class="add-section" @click="startFlow()">Start</button>
           </div>
         </section>
 

@@ -11,11 +11,17 @@ var app = new Vue({
   },
 
   methods: {
+    startFlow() {
+      if (this.finalList.length > 0) {
+        this.showResults = true;
+        this.start(10, this.finalList, false);
+      }
+    },
     start(time, activities, currentActivity) {
       if (time > 0) {
         this.currentSlide = currentActivity
           ? `${currentActivity} <br /><br /><strong>${time}</strong>`
-          : `Começando em: <strong>${time}</strong><br /><br /> Próximo: ${activities[0]}`;
+          : `Começa em <br /><br /><strong>${time}</strong><br /><br /> <small>${activities[0]}</small>`;
 
         setTimeout(() => {
           this.start(time - 1, activities, currentActivity);
