@@ -21,7 +21,7 @@ var app = new Vue({
       if (time > 0) {
         this.currentSlide = currentActivity
           ? `${currentActivity} <br /><br /><strong>${time}</strong>`
-          : `Começa em <br /><br /><strong>${time}</strong><br /><br /> <small>${activities[0]}</small>`;
+          : `Descançar, começa em <br /><br /><strong>${time}</strong><br /><br /> <small>Próximo:<br />${activities[0]}</small>`;
 
         setTimeout(() => {
           this.start(time - 1, activities, currentActivity);
