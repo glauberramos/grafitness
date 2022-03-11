@@ -28,10 +28,12 @@ var app = new Vue({
         }, 1000);
       } else {
         if (currentActivity && activities.length > 0) {
-          // var audio = new Audio('audio_file.mp3');
-          // audio.play();
+          var audio = new Audio("beep-24.mp3");
+          audio.play();
           this.start(this.interval, activities, false);
         } else if (activities.length > 0) {
+          var audio = new Audio("beep-29.mp3");
+          audio.play();
           var currentActivity = activities.shift();
           this.start(this.time, activities, currentActivity);
         } else {
