@@ -39,6 +39,10 @@
       margin-bottom: 5px;
     }
 
+    ol {
+      padding-left: 20px;
+    }
+
     main {
       display: flex;
       justify-content: space-evenly;
@@ -61,7 +65,7 @@
     }
 
     h2 {
-      margin-bottom: 24px;
+      margin: 24px 0;
       color: #3e3e52;
     }
 
@@ -87,6 +91,7 @@
       margin-top: 15px;
       height: 40px;
       padding: 10px 25px;
+      background: #38b501;
     }
 
     input {
@@ -95,7 +100,7 @@
       font-size: 16px;
       outline: none;
       border: 1px solid #c0c0d4;
-      width: 100px;
+      width: 50px;
       margin-right: 20px;
     }
 
@@ -112,6 +117,11 @@
       border-radius: 2px;
       transition: all 0.3s;
       display: inline-flex;
+    }
+
+    .select-button {
+      margin-top: 20px;
+      padding: 5px 10px;
     }
 
     button:hover {
@@ -154,36 +164,37 @@
       padding-left: 20px;
       margin-left: 20px;
     }
+
+    .field {
+      display: flex;
+    }
   </style>
   <body>
     <main id="app">
       <div class="container">
         <h1>Grafitness</h1>
 
-        <div class="flex">
-          <section>
-            <h4>Tempo cada atividade &nbsp;&nbsp;&nbsp;&nbsp;</h4>
-            <input
-              v-model="time"
-              id="time"
-              type="text"
-              placeholder="Tempo em segundos"
-            />
-          </section>
-
-          <section>
-            <h4>Descanso</h4>
-            <input
-              v-model="interval"
-              id="interval"
-              type="text"
-              placeholder="Intervalo em segundos"
-            />
-          </section>
-        </div>
-
         <section class="list-activities">
           <div>
+            <section class="field">
+              <h4>Tempo cada atividade &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+              <input
+                v-model="time"
+                id="time"
+                type="text"
+                placeholder="Tempo em segundos"
+              />
+            </section>
+
+            <section class="field">
+              <h4>Descanso</h4>
+              <input
+                v-model="interval"
+                id="interval"
+                type="text"
+                placeholder="Intervalo em segundos"
+              />
+            </section>
             <h2>Treinos</h2>
             <ol>
               <li>Passo pra trás</li>
@@ -192,6 +203,7 @@
               <li>Apoio</li>
             </ol>
             <button
+              class="select-button"
               @click="finalList = ['Passo pra trás', 'Corridinha no lugar - Perna pra trás', 'Agachamento soco no teto', 'Apoio']"
             >
               Selecionar
