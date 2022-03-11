@@ -8,10 +8,13 @@ var app = new Vue({
     interval: 15,
     finalList: [],
     currentSlide: "",
+    temporaryList: [],
   },
 
   methods: {
     startFlow() {
+      this.temporaryList = [...this.finalList];
+
       if (this.finalList.length > 0) {
         this.showResults = true;
         this.start(10, this.finalList, false);
@@ -40,6 +43,7 @@ var app = new Vue({
           var audio = new Audio("beep-24.mp3");
           audio.play();
           this.currentSlide = "Terminou!";
+          this.finalList = [...this.temporaryList];
           setTimeout(() => {
             this.showResults = false;
           }, 3000);

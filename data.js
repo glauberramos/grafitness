@@ -1,6 +1,7 @@
 const activities = [
   "Poli chinelo",
-  "Corridinha no lugar",
+  "Corridinha no lugar - Joelho alto",
+  "Corridinha no lugar - Perna pra trás",
   "Agachamento normal",
   "Agachamento soco no teto",
   "Apoio",

@@ -160,9 +160,9 @@
       <div class="container">
         <h1>Grafitness</h1>
 
-        <!-- <div class="flex">
+        <div class="flex">
           <section>
-            <h4>Tempo</h4>
+            <h4>Tempo cada atividade &nbsp;&nbsp;&nbsp;&nbsp;</h4>
             <input
               v-model="time"
               id="time"
@@ -172,7 +172,7 @@
           </section>
 
           <section>
-            <h4>Intervalo</h4>
+            <h4>Descanso</h4>
             <input
               v-model="interval"
               id="interval"
@@ -180,7 +180,7 @@
               placeholder="Intervalo em segundos"
             />
           </section>
-        </div> -->
+        </div>
 
         <section class="list-activities">
           <div>
@@ -202,7 +202,10 @@
                 Selecione suas atividades
               </div>
               <li v-for="(activity, index) in finalList">
-                <div>{{activity}}</div>
+                <div>
+                  <button @click="finalList.splice(index, 1)">-</button
+                  >{{activity}}
+                </div>
               </li>
             </ol>
             <button class="add-section" @click="startFlow()">Start</button>
