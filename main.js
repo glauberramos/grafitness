@@ -37,6 +37,8 @@ var app = new Vue({
           var currentActivity = activities.shift();
           this.start(this.time, activities, currentActivity);
         } else {
+          var audio = new Audio("beep-24.mp3");
+          audio.play();
           this.currentSlide = "Terminou!";
           setTimeout(() => {
             this.showResults = false;
