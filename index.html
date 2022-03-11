@@ -184,16 +184,7 @@
 
         <section class="list-activities">
           <div>
-            <h2>Selecione:</h2>
-            <ul>
-              <li v-for="(activity, index) in activities">
-                <div>
-                  <button @click="finalList.push(activity)">+</button>
-                  {{activity}}
-                </div>
-              </li>
-            </ul>
-            <h2>Treinos:</h2>
+            <h2>Treinos</h2>
             <ol>
               <li>Passo pra trás</li>
               <li>Corridinha no lugar - Perna pra trás</li>
@@ -205,6 +196,15 @@
             >
               Selecionar
             </button>
+            <h2>Atividades</h2>
+            <ul>
+              <li v-for="(activity, index) in activities">
+                <div>
+                  <button @click="finalList.push(activity)">+</button>
+                  {{activity}}
+                </div>
+              </li>
+            </ul>
           </div>
 
           <div class="second-list">
