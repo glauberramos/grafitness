@@ -4,7 +4,7 @@ var app = new Vue({
     loading: {},
     activities,
     showResults: false,
-    time: 30,
+    time: 25,
     interval: 15,
     finalList: [],
     currentSlide: "",
@@ -36,7 +36,7 @@ var app = new Vue({
 
         this.currentSlide = currentActivity
           ? `${currentActivity} <br /><br /><strong>${time}</strong>`
-          : `Descançar, começa em <br /><br /><strong>${time}</strong><br /><br /> <small>Próximo:<br />${activities[0]}</small>`;
+          : `Descansar, começa em <br /><br /><strong>${time}</strong><br /><br /> <small>Próximo:<br />${activities[0]}</small>`;
 
         setTimeout(() => {
           if (time - 1 > 0 && time - 1 < 10) {
@@ -47,7 +47,7 @@ var app = new Vue({
         }, 1000);
       } else {
         if (currentActivity && activities.length > 0) {
-          this.playAudio("Descançar");
+          this.playAudio("Descansar");
           this.start(this.interval, activities, false);
         } else if (activities.length > 0) {
           var currentActivity = activities.shift();
