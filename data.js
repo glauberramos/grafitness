@@ -20,6 +20,7 @@ const activities = {
   18: "Supino",
   19: "Levantamento lateral",
   20: "Levantamento frontal",
+  21: "Troca perna",
 };
 
 const alongamento = [
