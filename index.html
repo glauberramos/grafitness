@@ -197,14 +197,13 @@
             </section>
             <h2>Treinos</h2>
             <ol>
-              <li>Passo pra trás</li>
-              <li>Corridinha no lugar - Perna pra trás</li>
-              <li>Agachamento soco no teto</li>
-              <li>Apoio</li>
+              <li v-for="(number, index) in treinos[0]">
+                {{activities[number]}}
+              </li>
             </ol>
             <button
               class="select-button"
-              @click="finalList = ['Passo pra trás', 'Corridinha no lugar - Perna pra trás', 'Agachamento soco no teto', 'Apoio']"
+              @click="finalList = treinos[0].map(number => activities[number])"
             >
               Selecionar
             </button>

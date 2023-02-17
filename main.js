@@ -20,29 +20,42 @@ var app = new Vue({
         this.start(10, this.finalList, false);
       }
     },
+    playAudio(text) {
+      var msg = new SpeechSynthesisUtterance();
+      msg.voiceURI = "Google português do Brasil";
+      msg.lang = "pt-BR";
+      msg.localService = true;
+      msg.text = text;
+      window.speechSynthesis.speak(msg);
+    },
     start(time, activities, currentActivity) {
       if (time > 0) {
+        if (!currentActivity && time === 10) {
+          this.playAudio("Próximo: " + activities[0]);
+        }
+
         this.currentSlide = currentActivity
           ? `${currentActivity} <br /><br /><strong>${time}</strong>`
           : `Descançar, começa em <br /><br /><strong>${time}</strong><br /><br /> <small>Próximo:<br />${activities[0]}</small>`;
 
         setTimeout(() => {
+          if (time - 1 > 0 && time - 1 < 10) {
+            this.playAudio(time - 1);
+          }
+
           this.start(time - 1, activities, currentActivity);
         }, 1000);
       } else {
         if (currentActivity && activities.length > 0) {
-          var audio = new Audio("beep-24.mp3");
-          audio.play();
+          this.playAudio("Descançar");
           this.start(this.interval, activities, false);
         } else if (activities.length > 0) {
-          var audio = new Audio("beep-29.mp3");
-          audio.play();
           var currentActivity = activities.shift();
+          this.playAudio(currentActivity);
           this.start(this.time, activities, currentActivity);
         } else {
-          var audio = new Audio("beep-24.mp3");
-          audio.play();
           this.currentSlide = "Terminou!";
+          this.playAudio("Terminou!");
           this.finalList = [...this.temporaryList];
           setTimeout(() => {
             this.showResults = false;
