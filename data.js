@@ -33,4 +33,7 @@ const alongamento = [
   "Fecha uma perna e tenta alcançar a outra esticada - troca",
 ];
 
-const treinos = [[2, 14, 3, 14, 5, 4, 13]];
+const treinos = [
+  [2, 14, 3, 14, 5, 4, 13],
+  [0, 14, 3, 11, 6, 14, 7],
+];

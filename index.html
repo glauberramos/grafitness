@@ -196,17 +196,19 @@
               />
             </section>
             <h2>Treinos</h2>
-            <ol>
-              <li v-for="(number, index) in treinos[0]">
-                {{activities[number]}}
-              </li>
-            </ol>
-            <button
-              class="select-button"
-              @click="finalList = treinos[0].map(number => activities[number])"
-            >
-              Selecionar
-            </button>
+            <div v-for="(treino, index) in treinos">
+              <ol>
+                <li v-for="(number, index) in treino">
+                  {{activities[number]}}
+                </li>
+              </ol>
+              <button
+                class="select-button"
+                @click="finalList = treino.map(number => activities[number])"
+              >
+                Selecionar
+              </button>
+            </div>
             <h2>Atividades</h2>
             <ul>
               <li v-for="(activity, index) in activities">
