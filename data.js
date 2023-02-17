@@ -21,6 +21,7 @@ const activities = {
   19: "Levantamento lateral",
   20: "Levantamento frontal",
   21: "Troca perna",
+  22: "Abdominal infra",
 };
 
 const alongamento = [
@@ -37,4 +38,11 @@ const alongamento = [
 const treinos = [
   [2, 14, 3, 14, 5, 4, 13],
   [0, 14, 3, 11, 6, 14, 7],
+  [0, 3, 5, 6, 0, 3, 5, 6],
+  [1, 12, 14, 9, 1, 12, 14, 22],
 ];
+
+//formato
+//8 exercicios total, 5 blocos, 4 - 4 , x4 - x4, 4 - 4, x4 -x4, 4 - x4
+// 25 segundos exercicio, 15 intervalo, depois da metade passa pra 10 intervalo
+// descanço 1 minuto e meio
